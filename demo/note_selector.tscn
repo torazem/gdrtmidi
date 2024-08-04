@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkmudycc3jxfe"]
+
+[ext_resource type="Script" path="res://note_selector.gd" id="1_jtf2g"]
+
+[node name="NoteSelector" type="Control"]
+layout_mode = 3
+anchor_right = 0.091
+anchor_bottom = 0.255
+offset_right = 0.167992
+offset_bottom = -0.240021
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jtf2g")
+
+[node name="OctaveSlider" type="VSlider" parent="."]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 123.0
+min_value = 1.0
+max_value = 8.0
+value = 4.0
+
+[node name="Label" type="Label" parent="OctaveSlider"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 32.0
+offset_bottom = 159.0
+text = "4"
+horizontal_alignment = 1
+
+[node name="PitchSlider" type="VSlider" parent="."]
+offset_left = 33.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 124.0
+max_value = 11.0
+
+[node name="Label" type="Label" parent="PitchSlider"]
+offset_left = 1.0
+offset_top = 135.0
+offset_right = 33.0
+offset_bottom = 158.0
+text = "C"
+horizontal_alignment = 1
+
+[node name="VelocitySlider" type="VSlider" parent="."]
+offset_left = 66.0
+offset_top = 1.0
+offset_right = 101.0
+offset_bottom = 124.0
+max_value = 127.0
+value = 64.0
+
+[node name="Label" type="Label" parent="VelocitySlider"]
+offset_left = 4.0
+offset_top = 135.0
+offset_right = 36.0
+offset_bottom = 158.0
+text = "64"
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="OctaveSlider" to="." method="_on_octave_slider_value_changed"]
+[connection signal="value_changed" from="PitchSlider" to="." method="_on_pitch_slider_value_changed"]
+[connection signal="value_changed" from="VelocitySlider" to="." method="_on_velocity_slider_value_changed"]

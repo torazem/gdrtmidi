@@ -1,30 +1,23 @@
 # Introduction
-GDRtMidi is a wrapper for the popular C++ midi library RtMidi. 
+GDRtMidi is a Godot 4.3+ wrapper for the popular C++ midi library RtMidi. 
 
-__Currently only the Midi Out interface is supported.__
+This is a fork of [kumikohime's RtMidi wrapper](https://github.com/kumikohime/gdrtmidi) that has been upgraded to work with Godot 4.3+.
 
-# Installation
-
-1. Download from releases the version appropriate for your target platform(s). Prebuilt binaries for Windows and Linux are currently available.
-
-2. Copy the addons folder in your godot project.
+## Disclaimer
+1. I make no promises to maintain this fork.
+2. There are no pre-built binaries.
+3. This has only been tested on Windows with the debug build.
+4. Only the Midi Out interface is supported.
 
 # Building
 
 1. Clone the repo.
-
-2. Compile godot-cpp. ``cd godot-cpp && scons platform=windows -j12 && cd ..`` then build the gdnative libs ``scons platform=windows/linux/osx``
-Note: you might need to build rtmidi yourself if compiling for windows/osx
-``cd rtmidi && ./autogen.sh && make``
-
-3. Create a folder named ``gdrtmidi``. Copy the contents of ``gd`` into this folder.
-Copy the built library from step 2 somewhere inside this folder. By default it should be in
-``lib/x11`` for linux or ``lib/win`` for windows. If you choose to choose an arbitrary location, update the ``gdrtmidi.gdnlib`` accordingly.
-
-4. Copy the ``gdrtmidi`` folder under the ``addons`` directory in your godot project.
+2. Initialise the submodules by running `git submodule update --init`.
+3. Compile the project with `scons platform=windows/linux/osx`. It will take a while building `godot-cpp`.
 
 # Usage
 
-1. Docs are currently under construction. For the time being refer to the RtMidiOut Class Interface
+Check out the demo project under `demo/` for example usage.
+Also refer to the RtMidiOut Class Interface
 
 https://www.music.mcgill.ca/~gary/rtmidi/classRtMidiOut.html
